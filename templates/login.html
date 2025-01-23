@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="flex items-center justify-center p-8 pt-16">
+        <form method="POST" action="" class="bg-[#0096C7] shadow-lg rounded-xl p-10 shadow-black">
+            <div class="mb-4">
+                <label for="pseudo" class="block mb-2">
+            Pseudo
+                </label>
+                <input name="pseudo" type="text" placeholder="" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+            <!--mot de passe-->
+            <div class="mb-4">
+                <label for="mot_de_passe" class="block mb-2">
+            Mot de passe
+                </label>
+                <input name="mot_de_passe" type="password" placeholder="" class="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
+            </div>
+            <div class="pt-2">
+                <button type="submit" class="flex w-full justify-center rounded-md bg-cyan-600 px-3 py-2 text-sm/6 font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600">Se Connecter</button>
+            </div>
+        </form>
+    </section>
+
+    <!--Gestion d'erreur-->
+    {% if erreur %}
+        <p class="text-red-500">ERREUR : {{erreur}}</p>
+    {% endif %}
+
+{% endblock %}

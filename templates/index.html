@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+        <div class = "text-center font-semibold px-12 pt-6 pb-4">
+            {% if nom %}
+            <h2>Bonjour {{ nom }}</h2>
+            <p>Bienvenue Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat repellendus soluta magni!</p>
+            {% else %}
+            <p>CONNECTE TOI !! 😡 </p>
+            {% endif %}
+        </div>
+
+        <!--toutes les annonce-->
+
+        <section class = "grid grid-cols-3 gap-20 p-5">
+            {% for annonce in annonce %}
+            <article class = "bg-[#f4a261] border-[#264653] border-solid border-4 rounded-lg shadow-x1 p-3">
+                <h3 class="text-xl font-bold p-3 border-b border-black border-solid">{{annonce["titrewiki"]}}</h3>
+                <p class="text-sm font-semibold py-2">Activité proposée par : pseudo</p>
+                <p>{{annonce["corpsdelarticle"] | truncate(300)}}</p>
+            </article>
+            {% endfor %}
+        </section>
+
+    {% endblock %}

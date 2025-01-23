@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+    {% block content %}
+    <section>
+        {% for test in test %}
+            <h3>{{test['phrase']}}</h3>
+        {% endfor %}
+    </section>
+    {% endblock %}

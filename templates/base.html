@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Accueil</title>
+</head>
+<body>
+    
+    <header class = "flex justify-between p-6 bg-[#2A9D8F]">
+        <h1 class = "text-5xl text-white">Bienvenue sur LuminaCraft</h1>
+
+        <nav class="pt-4">
+            <ul class="flex space-x-6 text-right">
+                <li class="text-white"><a href="/">Home</a></li>
+                {% if session['util'] %}
+                <li class="text-white"><a href="/logout">Se déconnecter</a></li>*
+                {% else %}
+                <li class="text-white"><a href="/register">S'enregistrer</a></li>
+                <li class="text-white"><a href="/login">Se Connecter</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+<main class = "bg-[#CAF0F8] pb-48">
+    {% block content %}
+    {% endblock %}
+</main>
+    <footer>
+        <p class="text-center text-xl font-bold py-8 bg-[#240459]">Copyright : Luminacraft ; Réseaux : </p>
+    </footer>
+
+</body>
+</html>
+
